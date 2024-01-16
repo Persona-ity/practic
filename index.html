@@ -21,6 +21,11 @@ initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
                 <h1>{{ product }}</h1>
             </div>
             <a v-bind:href="link">More products like this.</a>
+            <p v-if="inventory > 10">In stock</p>
+            <p v-else-if="inventory <= 10 && inventory > 0">Almost sold out!</p>
+            <p v-else>Out of stock</p>
+            <span v-if="onSale">Скидка 10%</span>
+            <span v-else="">Пока нету скидок</span>
         </div>
     </div>
 
