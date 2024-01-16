@@ -9,9 +9,7 @@ let app = new Vue({
     
     altText: "A pair of socks",
     link: "https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords=socks",
-    inStock(){
-        return this.variants[this.selectedVariant].variantQuantity
-    },
+    
     inventory: 0,
     onSale: false,
     details: ['80% cotton', '20% polyester', 'Gender-neutral'],
@@ -44,9 +42,7 @@ let app = new Vue({
         updateProduct(variantImage) {
             this.image = variantImage
         },
-        image() {
-            return this.variants[this.selectedVariant].variantImage;
-        },
+        
         updateProduct(index) {
             this.selectedVariant = index;
             console.log(index);
@@ -63,6 +59,12 @@ let app = new Vue({
     computed: {
         title() {
         return this.brand + ' ' + this.product;
+        },
+        inStock(){
+            return this.variants[this.selectedVariant].variantQuantity
+        },
+        image() {
+            return this.variants[this.selectedVariant].variantImage;
         }
     },
     
