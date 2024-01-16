@@ -10,13 +10,8 @@ let app = new Vue({
     altText: "A pair of socks",
     link: "https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords=socks",
     
-<<<<<<< HEAD
     inventory: 100,
     onSale: true,
-=======
-    inventory: 0,
-    onSale: false,
->>>>>>> c37ca4930112d7b59bf531b39ce3c95a7630204d
     details: ['80% cotton', '20% polyester', 'Gender-neutral'],
     variants: [
         {
@@ -70,7 +65,6 @@ let app = new Vue({
         },
         image() {
             return this.variants[this.selectedVariant].variantImage;
-<<<<<<< HEAD
         },
         sale() {
             if (this.onSale) {
@@ -79,9 +73,6 @@ let app = new Vue({
                 return `${this.brand} ${this.product} is not on sale.`;
             }
         },
-=======
-        }
->>>>>>> c37ca4930112d7b59bf531b39ce3c95a7630204d
     },
     
     
