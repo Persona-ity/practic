@@ -54,6 +54,7 @@ Vue.component('product', {
         removeFromCart() {
             this.$emit('remove-from-cart', this.variants[this.selectedVariant].variantId);
         },
+// Поиск
         searchReviews(searchTerm) {
             if (searchTerm.trim() !== '') {
                 this.reviews = this.reviews.filter(review =>
@@ -85,7 +86,6 @@ Vue.component('product', {
     mounted() {
         eventBus.$on('review-submitted', productReview => {
             this.reviews.push(productReview);
-            // Save the original reviews to reset when needed
             originalReviews = [...this.reviews];
         });
     }
@@ -248,6 +248,7 @@ let app = new Vue({
     }
 })
 
+//Поиск
 Vue.component('review-search', {
     template:`
         <div>
